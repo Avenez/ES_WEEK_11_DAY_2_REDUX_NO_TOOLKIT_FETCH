@@ -12,8 +12,6 @@ const MainSearch = () => {
   const query = useSelector((state) => state.query);
   const data = useSelector((state) => state.initialState);
 
-  // const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?search=";
-
   const handleInputChange = (e) => {
     dispatch(SET_QUERY(e.target.value));
     console.log("questo è query " + query.query);
@@ -24,19 +22,6 @@ const MainSearch = () => {
     handleSubmit(query.query);
     console.log(data.data);
   };
-
-  //   try {
-  //     const response = await fetch(baseEndpoint + query + "&limit=20");
-  //     if (response.ok) {
-  //       const { data } = await response.json();
-  //       setJobs(data);
-  //     } else {
-  //       alert("Error fetching results");
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   return (
     <Container>

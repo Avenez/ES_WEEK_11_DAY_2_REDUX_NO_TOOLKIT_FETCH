@@ -19,7 +19,7 @@ const handleSubmit = async (query) => {
 
     try {
       console.log("sono nel try");
-      const response = await fetch("https://strive-benchmark.herokuapp.com/api/jobs?search=" + query + "&limit=20");
+      const response = await fetch(`https://strive-benchmark.herokuapp.com/api/jobs?search=${query}&limit=20`);
       const data = await response.json();
       console.log("data dalla fetch" + data);
       await dispatch(FETCH_DATA_SUCCESS(data));

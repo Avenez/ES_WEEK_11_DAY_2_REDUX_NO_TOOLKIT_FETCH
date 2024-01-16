@@ -7,6 +7,7 @@ const initialstate = {
 const fetchReducer = (state = initialstate, action) => {
   switch (action.type) {
     case "FETCH_DATA_REQUEST":
+      console.log("request");
       return {
         ...state,
         isLoading: true,
@@ -14,6 +15,7 @@ const fetchReducer = (state = initialstate, action) => {
       };
 
     case "FETCH_DATA_SUCCESS":
+      console.log("success");
       return {
         ...state,
         isLoading: false,
@@ -21,6 +23,7 @@ const fetchReducer = (state = initialstate, action) => {
       };
 
     case "FETCH_DATA_FAILURE":
+      console.log("failure");
       return {
         ...state,
         isLoading: false,
@@ -28,7 +31,8 @@ const fetchReducer = (state = initialstate, action) => {
       };
 
     default:
-      return state;
+      console.log("default");
+      return initialstate;
   }
 };
 
