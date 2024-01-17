@@ -3,7 +3,7 @@ import fetchReducer from "./fetchReducer";
 import queryReducer from "./queryReducer";
 
 const rootReducer = combineReducers({
-  initialState: fetchReducer,
+  initialstate: fetchReducer,
   query: queryReducer,
 });
 

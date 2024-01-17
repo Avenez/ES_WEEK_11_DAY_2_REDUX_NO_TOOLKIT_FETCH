@@ -8,6 +8,7 @@ const queryReducer = (state = { query: "" }, action) => {
       };
 
     default:
+      console.log("default di query");
       return state;
   }
 };

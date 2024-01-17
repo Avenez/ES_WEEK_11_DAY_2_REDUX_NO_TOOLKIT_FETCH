@@ -11,7 +11,6 @@ const fetchReducer = (state = initialstate, action) => {
       return {
         ...state,
         isLoading: true,
-        error: null,
       };
 
     case "FETCH_DATA_SUCCESS":
@@ -32,7 +31,7 @@ const fetchReducer = (state = initialstate, action) => {
 
     default:
       console.log("default");
-      return initialstate;
+      return state;
   }
 };
 

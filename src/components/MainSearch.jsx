@@ -3,6 +3,7 @@ import { Container, Row, Col, Form } from "react-bootstrap";
 import Job from "./Job";
 import { useDispatch, useSelector } from "react-redux";
 import handleSubmit, { SET_QUERY } from "../redux/actions/actions";
+import store from "../redux/store/store";
 
 const MainSearch = () => {
   // const [query, setQuery] = useState("");
@@ -10,17 +11,17 @@ const MainSearch = () => {
 
   const dispatch = useDispatch();
   const query = useSelector((state) => state.query);
-  const data = useSelector((state) => state.initialState);
+  const data = useSelector((state) => state.initialstate);
 
   const handleInputChange = (e) => {
     dispatch(SET_QUERY(e.target.value));
     console.log("questo è query " + query.query);
   };
 
-  const submit = (e) => {
+  const Submit = (e) => {
     e.preventDefault();
-    handleSubmit(query.query);
-    console.log(data.data);
+
+    dispatch(handleSubmit(query.query));
   };
 
   return (
@@ -30,7 +31,7 @@ const MainSearch = () => {
           <h1 className="display-1">Remote Jobs Search</h1>
         </Col>
         <Col xs={10} className="mx-auto">
-          <Form onSubmit={submit}>
+          <Form onSubmit={Submit}>
             <Form.Control
               type="search"
               value={query.query}
